@@ -1,0 +1,19 @@
+\begin{document}
+
+\maketitle          %% DO NOT CHANGE 
+\makehalftitle      %% DO NOT CHANGE 
+\frontmatter        %% DO NOT CHANGE. Layout of all stuff before Introduction.
+
+\input{Chapters/preface}        %%% OPTIONAL 
+\input{Chapters/abstract}
+\input{Chapters/acknowledgments}
+\input{Chapters/prerequisites}   %%% OPTIONAL 
+
+\tableofcontents    %% DO NOT CHANGE OR REMOVE
+\listoffigures      %% OPTIONAL 
+\listoftables       %% OPTIONAL 
+
+%% OPTIONAL. The following is needed if you use code listings
+\listingslabel{List of Code} %% Language dependent label used as title of the table of listings
+\lstlistoflistings  
+\addcontentsline{toc}{chapter}{\thelistingslabel} 
