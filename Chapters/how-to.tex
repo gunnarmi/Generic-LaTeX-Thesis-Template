@@ -37,6 +37,14 @@ for OSX, and
 for Ubuntu. MS users may try {\em WinEDT}\footnote{\url{www.winedt.com}}.
 
 
+\section{Language settings}
+
+The template is using the \texttt{polyglossia} package, for enabling easy use of different languages, including native UTF-8 support. You may make multi-language documents \footnote{\url{www.overleaf.com/learn/latex/Multilingual_typesetting_on_Overleaf_using_polyglossia_and_fontspec}}. You set the main language for instance like this (in the preamble, before \verb|\begin{document}|):
+
+\verb|\setdefaultlanguage[variant=bokmal]{norwegian}|
+
+See \cite[p.~6]{polyglossia} for supported languages, including variants.
+
 \section{Chapters/Sections/Paragraphs}
 
 As any document, the template is a collection of chapters, sections, subsections, subsubsections and paragraphs. By default subsubsections and paragraphs are not numbered or included in the table of contents. 
@@ -355,6 +363,8 @@ BibLaTeX generates the  bibliography only from the references in the document (a
 
 The different scientific communities have their own guidelines for how to format the entries in the bibliography, and how to format the references in the document.
 You decide which style to use with the command \verb|\citationstyle{ieee}| in the preamble in the main file.
+
+There are many options for creating specialized bibliography, for instance multiple bibliographies\footnote{\url{www.overleaf.com/learn/latex/bibliography_management_with_biblatex}}.
 
 There are several tools for creating and maintaining bibliography databases that export BibLaTeX files, both standalone programs, plugins to editors and browsers, and cloud based services\footnote{For instance, check out \url{zotero.org}}. I recommend to use such reference managers, in particular the online versions which, when shared, enable collaborative writing.
 
