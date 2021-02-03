@@ -368,7 +368,7 @@ There are many options for creating specialized bibliography, for instance multi
 
 There are several tools for creating and maintaining bibliography databases that export BibLaTeX files, both standalone programs, plugins to editors and browsers, and cloud based services\footnote{For instance, check out \url{zotero.org}}. I recommend to use such reference managers, in particular the online versions which, when shared, enable collaborative writing.
 
-\section{Glossary}
+\section{Glossary and Index}
 
 You may also make a glossary page, where the terms have descriptions and lists of pages they occur on. You need to provide the terms and their descriptions in the preamble, for instance in a separate file, see \verb|glossary.tex|. An entry looks like this:
 
@@ -380,16 +380,32 @@ You may also make a glossary page, where the terms have descriptions and lists o
 }
 \end{lstlisting}
 
-The terms are marked in the text like this:  
-\gls{maths}. The glossary is produced by including \verb|\\printglossaries| in the main file, and run \verb|makeglossaries| when compiling. The index page is produced by including \verb|\printindex| in the main file, and running the following sequence\footnote{Overleaf does this automatically when compiling.}:
+The terms are marked in the text like this:
+
+\verb|\gls{latex}|
+
+which generates
+\gls{latex}. The glossary is produced by including \verb|\\printglossaries| in the main file, and run \verb|makeglossaries| when compiling. 
+
+The result in the glossary will be something like this:  
+
+``mathematics Mathematics is what mathematicians do. 1, 29''.
+
+An index is made by marking words, for instance \index{IMRAD}, like this
+
+\verb|\index{IMRAD}|
+
+The index page is then produced by including \verb|\printindex| in the main file, and running the following sequence\footnote{Overleaf does this automatically when compiling.}:
 
 \begin{lstlisting}[float,float=!htbp]
 xelatex main
-makeglossary main
+makeindex main
 xelatex main
 \end{lstlisting}
 
-The result in the glossary will be something like this:  ``mathematics Mathematics is what mathematicians do. 1, 29''.
+The entry in the index page will then be:  
+
+``IMRAD, 48''.
 
 \section{Fonts}
 

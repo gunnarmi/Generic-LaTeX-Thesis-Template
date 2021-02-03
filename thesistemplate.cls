@@ -79,7 +79,7 @@
 
 % Load additional packages and commands.
 
-\RequirePackage{fancyhdr,paralist,lipsum,pdfpages,url,nameref,subfigure,wrapfig,tabularx,amssymb,relsize,microtype,xparse,hyperref,float,fullpage,polyglossia,csquotes,listings,dirtytalk}
+\RequirePackage{fancyhdr,paralist,lipsum,pdfpages,url,nameref,subfigure,wrapfig,tabularx,amssymb,relsize,microtype,xparse,hyperref,float,fullpage,polyglossia,csquotes,listings,dirtytalk,imakeidx}
 
 \RequirePackage{xcolor}
 \RequirePackage[headsep=2em]{geometry}

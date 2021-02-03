@@ -50,7 +50,11 @@ cover,              %% Custom cover page, must be provided as an Layout/coverpag
 \citationstyle{ieee} %% REQUIRED. Citation style, see https://www.overleaf.com/learn/latex/biblatex_citation_styles for all available styles, some examples: ieee, apa, nature.
 \addbibresource{Bibliography/thesis.bib} %% REQUIRED. You may substitute "thesis" with another. To include more *.bib files, repeat the \addbibresource command
 
-\input{Chapters/glossary}    %% OPTIONAL, goes with \printglossaries in the end matter file
+\input{Chapters/glossary}       %% OPTIONAL, goes with \printglossaries in the end matter file
+
+\makeindex[columns=2, intoc]
+
+%\makeindex%[columns=2, intoc]    %% OPTIONAL, goes with \printindex in endmatter.tex
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% END PREAMBLE
