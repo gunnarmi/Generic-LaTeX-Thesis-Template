@@ -88,6 +88,7 @@
 \RequirePackage[nottoc]{tocbibind}
 \RequirePackage[colorinlistoftodos,obeyDraft]{todonotes}
 
+
 % Custom headers and footers
 \pagestyle{fancy}
 \fancyhf{}
