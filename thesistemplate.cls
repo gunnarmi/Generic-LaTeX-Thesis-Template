@@ -87,6 +87,7 @@
 \RequirePackage[export]{adjustbox}
 \RequirePackage[nottoc]{tocbibind}
 \RequirePackage[colorinlistoftodos,obeyDraft]{todonotes}
+\RequirePackage[multidot]{grffile}
 
 
 % Custom headers and footers
