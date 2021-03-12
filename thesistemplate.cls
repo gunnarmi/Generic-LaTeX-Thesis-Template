@@ -66,6 +66,9 @@
 % Process given options
 \ProcessOptions\relax
 
+% Needs to be included before LoadClass, to avoid package clash
+\RequirePackage[hyphens]{url}
+
 % Load base
 \LoadClass[11pt,a4paper,twoside]{book}
 
