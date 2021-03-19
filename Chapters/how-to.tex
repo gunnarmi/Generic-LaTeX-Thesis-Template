@@ -309,6 +309,40 @@ And finally the decription list:
 
 Needless to say, as anything else in \LaTeX, these lists can be customized to your liking.
 
+\subsection{Custom counters}
+
+If you need to number terms or labels, and the list environments do not provide what you are looking for, you can make your own counter and use it to make a new command or environment. In this example, the technique is used to make a table of software reguirements. 
+
+A new counter is generated like this:
+
+\verb|\newcounter{reqcounter}|
+
+Then, for example, you can make a new command using the counter:
+
+\verb|\newcommand{\req}{\refstepcounter{reqcounter} \textbf{R \thereqcounter }}|
+
+\newcounter{rqcount}
+\newcommand{\req}{\refstepcounter{rqcount} \textbf{R\therqcount }}
+
+In Table \ref{tab:requirements}, the command is used to automatically generate the numbered IDs. The IDs are labeled, and can be referenced (for instance, requirement R\ref{req:media}).
+
+\begin{table}[!htbp]
+    \begin{center}
+        \begin{tabular}{|l|l|l|}
+             \hline
+             ID & Requirement  & Importance  \\
+             \hline \hline
+             \req \label{req:register} & Registration of new user based on user input & High \\
+             \hline
+             \req \label{req:media} & Registration of new user based on existing Facebook or Google account & Medium \\
+             \hline
+        \end{tabular}
+    \end{center}
+    \caption{Requirements}
+    \label{tab:requirements}
+\end{table}
+
+
 \section{Source code}
 \label{sec:sourcecode} 
 
