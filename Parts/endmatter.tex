@@ -2,6 +2,19 @@
 
 \printindex                 %% OPTIONAL
 
+
+%%% THE FOLLOWING APPLIES IF ENDNOTES ARE USED. ELSE: REMOVE
+\renewcommand*{\enoteheading}{} 
+\renewcommand\enoteformat{%
+   \noindent\theenmark.\ \hangindent .7\parindent%
+}
+\def\enotesize{\normalsize}
+\cleardoublepage
+\chapter*{Notes}            %% The title of the endnote chapter
+\addcontentsline{toc}{chapter}{Notes}
+\theendnotes
+%%% END OF ENDNOTE STUFF
+
 \appendix                   %% OPTIONAL. Use if you want to include appendices. The following chapters wil be formatted separately as appendices
 \input{Chapters/how-to}     %% READ THIS CHAPTER: A detailed user manualm, with sample code of everything you need and more :-)
 

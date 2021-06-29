@@ -19,7 +19,7 @@ The template is implemented as a document class,
 First of all, it outlines a recommended structure of the thesis, and provides guidelines for the content of each part.
 In addition, it serves as a concrete example of how this can be accomplished by using \LaTeX. Use the template by gradually populating the files with your own content, and perhaps modify the structure to suit your project. The template is designed to be rather self-explanatory, and all of the features you need are present somewhere in the source code, so you will come a long way by cutting and pasting.
 
-It is assumed that the user has (or provides herself with) some basic knowledge of \LaTeX. There are numerous good tutorials online\footnote{\url{latex-project.org} is a good starting point}, but I warmly recommend the original documentation: ``\LaTeX: A Document Preparation System'' (Figure \ref{fig:lamport})  \cite{lamport94ldp}. \LaTeX\ is basically a collection of macros written in \TeX.
+It is assumed that the user has (or provides herself with) some basic knowledge of \LaTeX. There are numerous good tutorials online\footnote{\url{latex-project.org} is a good starting point}, but I warmly recommend the original documentation: ``\LaTeX: A Document Preparation System'' (Figure \ref{fig:lamport})  \parencite{lamport94ldp}. \LaTeX\ is basically a collection of macros written in \TeX.
 This system, which is a low level tool for digital typesetting, is known for producing scientific documents of unprecedented quality. It was developed by Donald Knuth, one of the giants in computer science.
 
 \begin{figure}[!htbp]
@@ -43,9 +43,9 @@ The template is using the \texttt{polyglossia} package, for enabling easy use of
 
 \verb|\setdefaultlanguage[variant=bokmal]{norwegian}|
 
-See \cite[p.~6]{polyglossia}\footnote{\url{https://ctan.uib.no/macros/unicodetex/latex/polyglossia/polyglossia.pdf}} for supported languages, including variants.
+See \parencite[p.~6]{polyglossia}\footnote{\url{https://ctan.uib.no/macros/unicodetex/latex/polyglossia/polyglossia.pdf}} for supported languages, including variants.
 
-\section{Chapters/Sections/Paragraphs}
+\section{Chapters/Sections/Paragraphs/Footnotes/Endnotes}
 
 As any document, the template is a collection of chapters, sections, subsections, subsubsections and paragraphs. By default subsubsections and paragraphs are not numbered or included in the table of contents. 
 
@@ -71,6 +71,10 @@ This is a sub sub section. \lipsum[15-16]
 This is a titled paragraph.
 Please note the difference between the standard paragraphs produced by blank lines, and this type, which is the lowest level of elements with titles.
 
+{\em Footnotes} are made with the command \verb|\footnote{This is a footnote}|, generating a footnote at the bottom of the page\footnote{This is a footnote}.
+
+In some disciplines, like social sciences, it is common to place the notes in a separate chapter/section at the end of the document. Such notes are called {\em endnotes}, and are made with \verb|\endnote{The end}|\endnote{Definition of an endnote from Merriam-Webster: \say{A note placed at the end of the text}.}. 
+
 \lipsum[17-18]
 
 \section{Figures, tables, equations, etc.}
@@ -86,7 +90,7 @@ Figures, tables, equations, and similar constructs are so-called {\em floats}. T
     \subfigure[input]{\label{fig:aust}\includegraphics[width=2.5in]{Graphics/introaustralia}}
     \subfigure[output]{\label{fig:approx}\includegraphics[width=2.25in]{Graphics/australia_approx}}
   \end{center}
-  \caption{Input and result from running the Douglas-Peucker line simplification algorithm (from  \cite{kjeldsen05cor})}
+  \caption{Input and result from running the Douglas-Peucker line simplification algorithm (from  \parencite{kjeldsen05cor})}
   \label{fig:dpaustralia}
 \end{figure}
 
@@ -386,19 +390,20 @@ An example of a correctly formatted bibliography item is found in \ref{list:BibL
 } 
 \end{lstlisting} 
 
-
-This format is called  {\em BibTeX}, and all the academic search engines, including
+This format is called {\em BibTeX}, and all the academic search engines, including
  {\em Google Scholar}, export to this format.
-When referencing, you use this command: \verb| \cite{perelman97mht}|
-and you get:  \cite{perelman97mht}. If you want to specify page(s), use \verb|\cite[p. XX]{perelman97mht}|, which results in \cite[p. XX]{perelman97mht}.
+When referencing, you use this command: \verb|\parencite{perelman97mht}|
+and you get: \parencite{perelman97mht}. If you don't want parentheses, 
+use \verb|\cite{perelman97mht}|, which gives you: \cite{perelman97mht}. 
+If you need to specify page(s), use \verb|\parencite[p. XX]{perelman97mht}|, which results in \parencite[p. XX]{perelman97mht}.
  
-To build the bibliography, run \verb|\printbibliography[heading=bibintoc]|, which also places an entry in the table of contents.
+To build the bibliography, use the command \verb|\printbibliography[heading=bibintoc]|, which also places an entry in the table of contents.
 BibLaTeX generates the  bibliography only from the references in the document (and not from all the items in the \texttt{.bib} files).
 
 The different scientific communities have their own guidelines for how to format the entries in the bibliography, and how to format the references in the document.
-You decide which style to use with the command \verb|\citationstyle{ieee}| in the preamble in the main file.
+You decide which style to use with the command \verb|\citationstyle{<the_style_name>}| in the preamble in the main files\footnote{For an overview of available styles, see \url{https://www.overleaf.com/learn/latex/Biblatex_citation_styles}}.
 
-There are many options for creating specialized bibliography, for instance multiple bibliographies\footnote{\url{www.overleaf.com/learn/latex/bibliography_management_with_biblatex}}.
+There are many options for creating specialized bibliographies, for instance multiple bibliographies\footnote{\url{www.overleaf.com/learn/latex/bibliography_management_with_biblatex}}.
 
 There are several tools for creating and maintaining bibliography databases that export BibLaTeX files, both standalone programs, plugins to editors and browsers, and cloud based services\footnote{For instance, check out \url{zotero.org}}. I recommend to use such reference managers, in particular the online versions which, when shared, enable collaborative writing.
 
